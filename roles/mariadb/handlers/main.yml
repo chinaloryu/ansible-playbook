@@ -1,3 +1,6 @@
 ---
-- name: start mariadb service
-  service: name=mariadb state=started enabled=yes
+- name: modify mariadb user password
+    mysql_user: 
+      name: root 
+      password: loryu
+
