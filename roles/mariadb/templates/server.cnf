@@ -29,6 +29,7 @@ max_connections = 1000
 # Allow server to accept connections on all interfaces.
 #
 #bind-address=0.0.0.0
+bind-address="{{ ip_intra }}"
 #
 # Optional setting
 #wsrep_slave_threads=1
