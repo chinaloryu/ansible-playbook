@@ -9,11 +9,9 @@
   template: src=server.cnf dest=/etc/my.cnf.d/
 - name: transfer mysql-clients configuration conf_files
   template: src=mysql-clients.cnf dest=/etc/my.cnf.d/
+- name: start mariadb service
+  service: name=mariadb state=started enabled=yes
   tags:
-    - config mariadb
+    - start mariadb
   notify:
-    - start mariadb service
-- name: modify mariadb user password
-  mysql_user: 
-    name: root 
-    password: loryu
+    - modify mariadb user password
