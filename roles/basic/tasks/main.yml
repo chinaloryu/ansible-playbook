@@ -1,0 +1,9 @@
+---
+- name: install necessory packages
+  yum: name="{{nec_pkgs}}" state=latest
+- name: modify tcp connector limits
+  template: src=limits.conf dest=/etc/security/
+  tags:
+    - modifytcplimits
+  notify:
+    - execute sysctl

@@ -1,0 +1,17 @@
+---
+nec_pkgs: libevent,libevent-devel,pcre,gcc,zlib,zlib-devel
+servername: 
+  - "{{ ansible_hostname }}"
+thrd_amt: 
+  - "{{ ansible_processor_vcpus }}"
+mem_tlt: 
+  - "{{ ansible_memtotal_mb }}"
+ipv4_addr:
+  - "{{ ansible_default_ipv4.address }}"
+cur_date:
+  - "{{ ansible_date_time.date }}"
+rm_app_dir:
+  - /u01/application
+rm_app_le_dir:
+  - /letv/app
+

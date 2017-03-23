@@ -1,0 +1,9 @@
+#!/usr/bin/expect -f
+set timeout 5
+spawn /usr/bin/mysql -u root -p
+expect {
+        "assword:" {send "test\n";exp_continue;}
+        "MariaDB [(none)]>"
+        {send "exit\r"}
+}
+expect eof

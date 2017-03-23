@@ -1,0 +1,12 @@
+---
+nec_pkgs: mariadb-server,mariadb,expect,tcl,MySQL-python
+servername: 
+  - "{{ ansible_hostname }}"
+thrd_amt: 
+  - "{{ ansible_processor_vcpus }}"
+mem_tlt: 
+  - "{{ ansible_memtotal_mb }}"
+ip_intra:
+  - "{{ ansible_all_ipv4_addresses[0] }}"
+mysql_pwd:
+  - Cloudcc@2017

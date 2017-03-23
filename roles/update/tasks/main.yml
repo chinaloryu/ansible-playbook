@@ -1,0 +1,14 @@
+---
+- name: transfer new release
+  unarchive: src=release.tar.gz dest=/tmp/
+- name: print ip address
+  shell: echo "{{ ipv4_addr }}"
+  when: ansible_default_ipv4.address == "{{ ipv4_addr }}"
+- name: stop tomcat
+  shell: ps aux|grep svr-t7|grep -v cronolog|grep -v grep|awk '{print $2}'|xargs kill -9
+- name: backup current releas
+  template: src=limits.conf dest=/etc/security/
+  tags:
+    - modifytcplimits
+  notify:
+    - execute sysctl

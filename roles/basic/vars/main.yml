@@ -1,0 +1,8 @@
+---
+nec_pkgs: libevent,libevent-devel,pcre,gcc,zlib,zlib-devel
+servername: 
+  - "{{ ansible_hostname }}"
+thrd_amt: 
+  - "{{ ansible_processor_vcpus }}"
+mem_tlt: 
+  - "{{ ansible_memtotal_mb }}"

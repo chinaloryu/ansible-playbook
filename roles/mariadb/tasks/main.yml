@@ -1,0 +1,17 @@
+---
+- name: transfer repo file
+  copy:  src=mariadb.repo dest=/etc/yum.repo.d/
+- name: install necessory packages
+  yum: name="{{nec_pkgs}}" state=latest
+- name: transfer client configuration conf_files
+  template: src=client.cnf dest=/etc/my.cnf.d/
+- name: transfer server configuration conf_files
+  template: src=server.cnf dest=/etc/my.cnf.d/
+- name: transfer mysql-clients configuration conf_files
+  template: src=mysql-clients.cnf dest=/etc/my.cnf.d/
+  tags:
+    - config mariadb
+  notify:
+    - start mariadb service
+- name: modify mariadb user password
+  mysql_user: name=root password="{{ mysql_pwd }}"
