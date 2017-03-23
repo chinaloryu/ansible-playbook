@@ -14,4 +14,6 @@
   notify:
     - start mariadb service
 - name: modify mariadb user password
-  mysql_user: name=root password="{{ mysql_pwd }}"
+  mysql_user: 
+    name: root 
+    password: loryu
