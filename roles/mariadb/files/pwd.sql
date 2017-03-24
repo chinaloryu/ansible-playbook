@@ -1,2 +1,2 @@
-update mysql.user set Password=password('Cloudcc@2017') where User='root';
+update mysql.user set Password=password('mypwdtest') where User='root';
 commit;
