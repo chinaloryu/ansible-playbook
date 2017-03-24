@@ -1,4 +1,13 @@
 ---
+- name: create standered directories
+  file: name=/u01/{{ item.path }} state=directory mode=755
+  with_items:
+    - { path: 'softwares' }
+    - { path: 'services' }
+    - { path: 'install' }
+    - { path: 'application' }
+- name: add epel repos
+  copy: src="{{ repo_epel }}" dest=/etc/yum.repo.d/
 - name: install necessory packages
   yum: name="{{nec_pkgs}}" state=latest
 - name: modify tcp connector limits

@@ -6,3 +6,5 @@ thrd_amt:
   - "{{ ansible_processor_vcpus }}"
 mem_tlt: 
   - "{{ ansible_memtotal_mb }}"
+repo_epel: epel.repo
+repo_epel_test: epel-testing.repo

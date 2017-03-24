@@ -1,6 +1,6 @@
 ---
-- hosts:  mariadb
+- hosts:  basic
   gather_facts: true
   remote_user: root
   roles: 
-    - mariadb
+    - basic
