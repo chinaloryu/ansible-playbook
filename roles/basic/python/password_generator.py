@@ -1,5 +1,5 @@
 #!/usr/bin/python
-@20170322 loryu
+# @20170322 loryu
 from random import choice
 import string
 class password_generator:
