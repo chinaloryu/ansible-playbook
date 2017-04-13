@@ -1,4 +1,2 @@
 [basic]
-192.168.1.221
-[mariadb]
-192.168.1.212
+192.168.1.233 ansible_ssh_user=ansible-test ansible_ssh_pass=123456 ansible_become_pass=test123456

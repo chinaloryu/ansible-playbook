@@ -4,7 +4,7 @@ servername:
   - "{{ ansible_hostname }}"
 thrd_amt: 
   - "{{ ansible_processor_vcpus }}"
-mem_tlt: 
-  - "{{ ansible_memtotal_mb }}"
+mem_c: 
+  - "{{ ( ansible_memtotal_mb - 1000 ) // 3 }}"
 repo_epel: epel.repo
 repo_epel_test: epel-testing.repo
